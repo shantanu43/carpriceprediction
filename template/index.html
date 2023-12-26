@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color:PowderBlue;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Car Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/styles.css">
+
+    <style>
+    body
+    {
+      background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1283&q=80');
+    }
+    .btn-secondary1
+    {
+      background-color: skyblue;
+      color: black;
+      text-align: center;
+    }
+    .btn-secondary2
+    {
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="text-align:center;margin-left:500px;margin-right:530px">
+        <div class="container-fluid" >
+            <div class="navbar-header" >
+                   <h2 style="color:LightBlue;" style="text-align:center">CAR PRICE PREDICTION</h2>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <!-- Year of Purchase -->
+                            <h5 class="card-title" style="color: SeaShell;">Year of Purchase</h5>
+                            <input id="first" name="Year" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <h5 class="card-title1" style="color: SeaShell;">Car Model</h5>
+                            <!-- Car Model -->
+                            <select name="Owner1" id="Car Model" required="required">
+                                <option value="0"></option>
+                                <option value="1">ritz</option>
+                                <option value="2">Baleno</option>
+                                <option value="3">wagonr</option>
+                                <option value="4">swift</option>
+                                <option value="5">vitara brezza</option>
+                                <option value="6">s cross</option>
+                                <option value="7">alto 800</option>
+                                <option value="8">ertiga</option>
+                                <option value="9">dzire</option>
+                                <option value="10">alto k10</option>
+                                <option value="11">ignis</option>
+                                <option value="12">omni</option>
+                                <option value="13">fortuner</option>
+                                <option value="14">innova</option>
+                                <option value="15">land cruiser</option>
+                                <option value="16">Verna</option>
+                                <option value="17">i-10</option>
+                                <option value="18">i-20</option>
+                                <option value="19">Creta</option>
+                                <option value="20">City</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                              <!-- Current Price(In Lakhs) -->
+                              <h5 class="card-title" style="color: SeaShell;">Current Price(In Lakhs)</h5>
+                              <input id="third" name="Present_Price" required="required">
+                       </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <!-- Kilometers Driven -->
+                            <h5 class="card-title" style="color: SeaShell;">Kilometers Driven</h5>
+                            <input id="second" name="Kms_Driven" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+
+                 <div class="row">
+                   <div class="col-sm-6">
+                        <div class="card" style="background-color:rgb(66,66,66);">
+                            <div class="card-body">
+                               <h5 class="card-title" style="color: SeaShell;">Fuel Type</h5>
+                                <!-- Fuel Type -->
+                               <select name="Fuel_Type_Petrol" id="Fuel Type" required="required">
+                                   <option value="0"></option>
+                                   <option value="Petrol">Petrol</option>
+                                 <option value="Diesel">Diesel</option>
+                                 <option value="CNG">CNG</option>
+                               </select>
+                            </div>
+                        </div>
+                   </div>
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: SeaShell;">Seller Type</h5>
+                            <!-- Seller Type -->
+                            <select name="Seller_Type_Individual" id="Seller Type" required="required">
+                                <option value="0"></option>
+                                <option value="Dealer">Dealer</option>
+                                <option value="Individual">Individual</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: SeaShell;">Transmission</h5>
+                            <!-- Transmission -->
+                            <select name="Transmission_Mannual" id="Transmission" required="required">
+                                <option value="0"></option>
+                                <option value="Manual">Manual</option>
+                                <option value="Automatic">Automatic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" style="background-color:rgb(66,66,66);">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: SeaShell;">Number of Owners</h5>
+                            <!-- Number of Owners -->
+                            <select name="Owner" id="Number of Owners" required="required">
+                                <option value="0"></option>
+                                <option value="1">0</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary2">
+            <br>
+            <br>
+
+             <a href="/client" class="btn btn-secondary1">Book Car Inspection</a>
+
+        </form>
+
+
+        <br>
+        <br>
+        <style>
+        h3 {
+          text-align: center;
+          color: black;
+          border: 3px solid;
+          background-color: darkgrey;
+          padding: 0.2px;
+        }
+        </style>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+
+        <style>
+          p {
+            color: white;
+          }
+        </style>
+
+        <p style="text-align: right;">©2023 TY Major Project MITAOE</p>
+
+
+
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</body>
+</html>
